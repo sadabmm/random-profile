@@ -1,0 +1,51 @@
+<ion-header>
+
+  <!-- The navigation bar with the back and login button. -->
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button round outline (click)="logout()">
+        Logout
+      </button>
+    </ion-buttons>
+    <ion-title>Random Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100 text-center center>
+        <img [src]="pictureUrl" alt="" class="picture">
+      </ion-col>
+    </ion-row>
+    <!-- All the user details represented as ion-items. -->
+    <ion-row>
+      <ion-col width-100 center>
+        <ion-item item-content text-wrap text-center>
+          <strong>First Name: </strong> {{firstName}}
+          <strong> Last Name: </strong> {{lastName}}
+        </ion-item>
+        <ion-item item-content text-wrap text-center>
+          <strong>Date and Time of Birth: </strong> {{birthDate}}
+        </ion-item>
+        <ion-item item-content text-wrap text-center>
+          <strong>Email: </strong> {{email}}
+        </ion-item>
+        <ion-item item-content text-wrap text-center>
+          <strong>Phone: </strong> {{phone}}
+          <strong> Cell: </strong> {{cell}}
+        </ion-item >
+        <ion-item item-content text-wrap text-center>
+          <strong>Location: </strong> {{location.street + ', ' + location.city + ', ' + location.state + ', ' + location.postcode}}
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100 text-center>
+        <button ion-button round (click)="reload()" >Reload</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Welcome!
     </ion-title>
   </ion-navbar>
 </ion-header>
 
+<!-- Login form with a submit method. For the username and password inputs 2-way data binding is done using ngModel. 
+On clicking the Submit button onSubmit() method will be called.-->
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-grid>
+    <ion-row center>
+      <ion-col width-100 class="login">
+        <ion-list>
+          <form (submit)="onSubmit()">
+            <!-- The stacked layout for the input fields is used. -->
+            <ion-item>
+              <ion-label color="primary" stacked>Username</ion-label>
+              <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label color="primary" stacked>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+            </ion-item>
+            
+            <br>
+            <button ion-button round type="submit" >Login</button>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
